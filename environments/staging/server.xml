@@ -24,12 +24,12 @@
 <!-- This property was set to set custom cookie name to avoid conflict when using SSO -->
 <!--<webAppSecurity useOnlyCustomCookieName="true" ssoCookieName="mstCookie"/> -->  
  	<!-- Basic Registry -->
-    <basicRegistry id="basic" realm="basicRealm">
+<!--    <basicRegistry id="basic" realm="basicRealm">
       <user name="persona1" password="ppersona1"/>
       <user name="persona2" password="ppersona2"/>
       <user name="persona3" password="ppersona3"/>
       <user name="persona4" password="ppersona4"/>
-    </basicRegistry>
+    </basicRegistry> -->
 	<!--
     <ssl id="LDAPSSLSettings" keyStoreRef="ldaptruststore" trustStoreRef="ldaptruststore" />
     <keyStore id="ldaptruststore" location="/config/trustStore.jks" type="JKS" password="passw0rd" />
