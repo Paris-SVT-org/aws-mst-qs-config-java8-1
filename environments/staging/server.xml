@@ -41,17 +41,16 @@
 	</ldapRegistry> -->
 	
 <!-- Replace DB server information below to connect to your own DB server -->
-        <authData id="DBAuth" password="letme1n2.2021Q1" user="db2inst1"/>
+        	<include location="${shared.resource.dir}/ease/db2/jdbc4.xml"/>
 
-	<dataSource containerAuthDataRef="DBAuth" id="Messenger" jdbcDriverRef="JDBCDriver" jndiName="jdbc/Messenger" type="javax.sql.XADataSource">
-         <properties.db2.jcc databaseName="MSGRDB" driverType="4" password="letme1n2.2021Q1" portNumber="50000" serverName="db2mst-1.fyre.ibm.com" user="db2inst1" />
-	</dataSource>
-
-	<jdbcDriver id="JDBCDriver">
-	 <library>
-	  <fileset dir="/config/db2jars" id="db2jcc4" includes="db2jcc4.jar, db2jcc_license_cu.jar"/>
-	 </library>
-	</jdbcDriver>
+<dataSource jndiName="jdbc/Messenger"  jdbcDriverRef="ease.db2jcc4">
+  <properties.db2.jcc serverName="ec2-52-87-90-56.compute-1.amazonaws.com"
+                      portNumber="60000"
+                      databaseName="MSGRDB"
+                      sslConnection="false"
+                      user="db2inst1"
+                      password="db2passw0rd"/>
+</dataSource>
 
 <!-- This allows certificate client to use basic authentication if certificate authentication does not succeed -->
 <!--	<webAppSecurity allowFailOverToBasicAuth="true" useAuthenticationDataForUnprotectedResource="false"/> -->
@@ -84,7 +83,7 @@
 			</security-role>
 <!-- This role is used bu QuickSeBasic web module. Any user assigned to this role is not able to access the web module -->
 			<security-role name="BasicLoginDummy_WebUsers">
-				<user name="persona103"/>
+				<user name="persona1"/>
 				<group name="g11-20"/>
 			</security-role>
 			<security-role name="delegateUsers">
@@ -104,29 +103,29 @@
 			</security-role>
 <!-- These users are marked admin in the database. This role is used by MessengerEJB -->
 			<security-role name="admins">
-			   <user name="persona105"/>
+			   <user name="persona1"/>
 			   <user name="persona2"/>
 			   <group name="g1-10"/>	
 			   <special-subject type="ALL_AUTHENTICATED_USERS"/>
 			</security-role>
 
 			<security-role name="messengerUsers">
-				<user name="persona106"/>
+				<user name="persona1"/>
 				<special-subject type="ALL_AUTHENTICATED_USERS"/>
 			</security-role>
 <!-- These users are marked manager in the database. This role is used by MessengerEJB -->
 			<security-role name="manager"> 
-				<user name="persona107"/>
+				<user name="persona1"/>
 				<group name="g1-10"/>
 			</security-role>
 <!-- The below runas mapping could be commented for longrun, otherwise all the calls to delegateEJB will be as below mapped user rather than user entered from the web login. -->
 		 	<security-role name="RunAsSpecified_servlet"> 
-				 <run-as userid="persona108"/> 
+				 <run-as userid="persona1"/> 
 				 <!--<run-as userid="persona1"/> --> 
 			</security-role>
 <!-- delegateEJBBeanLevelRunAs applied to all the methods of delegateEJB so that all the outbound calls to messngerEJB will use this identity.-->	
 			<security-role name="delegateEJBBeanLevelRunAs">
-				<run-as userid="persona109"/> 
+				<run-as userid="persona4"/> 
 			</security-role>	
 <!-- This role is mapped to persona11 in the ibm-application-bnd.xml file. Below lines can be uncommented to override the binding mapping.   -->
 			<!--  <security-role name="delegateEJBMethodLevelRunAS"> <run-as userid="persona3"/> 
@@ -141,4 +140,3 @@
 -->
         
 </server>
-
