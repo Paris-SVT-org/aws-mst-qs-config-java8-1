@@ -53,7 +53,7 @@
                       databaseName="MSGRDB"
                       sslConnection="false"
                       user="db2inst1"
-                      password="${DB2_password}"/>
+                      password="${DB2_password_prod}"/>
 </dataSource>
 
 <!-- This allows certificate client to use basic authentication if certificate authentication does not succeed -->
