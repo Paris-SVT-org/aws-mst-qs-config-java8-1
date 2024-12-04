@@ -7,5 +7,14 @@ app:
     type: ear
   instances:
     min: 1
-    max: 1
+    max: 5
   endpoints: public
+  # Configure vCPU and indirectly memory resources for the application. 
+  # The memory assigned to the application is directly proportional to the 
+  # requested vCPU number multiplied by 4. For example, if cpu is set to 1, 4Gi
+  # memory is allocated to the application; if cpu is set to 2, 8Gi of memory
+  # is allocated to the application; and so on.  
+  resources:
+    # The vCPU number for the application. If not set, it defaults to 1 vCPU. 
+    # The max number of vCPU that can be requested is 14.
+    cpu: 2
