@@ -6,6 +6,6 @@ app:
     version: "ee8"
     type: ear
   instances:
-    min: 1
+    min: 3
     max: 5
   endpoints: public
