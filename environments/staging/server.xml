@@ -40,10 +40,9 @@
 	 </failoverServers>
 	</ldapRegistry> -->
 
-		<ldapRegistry host="ec2-52-87-90-56.compute-1.amazonaws.com" baseDN="o=ibm,c=us" port="9389" ldapType="IBM Tivoli Directory Server" id="LDAP_tdirsrv" sslEnabled="false" name="o=ldap1" sslRef="LDAPSSLSettings">
-	
-	</ldapRegistry> 
-	
+	<ldapRegistry host="ec2-3-231-5-201.compute-1.amazonaws.com" baseDN="o=ibm,c=us" port="9636" ldapType="IBM Tivoli Directory Server" id="LDAP_tdirsrv" sslEnabled="true" name="o=ldap1" sslRef="LDAPSSLSettings">
+
+	</ldapRegistry>
 <!-- Replace DB server information below to connect to your own DB server -->
         	<include location="${shared.resource.dir}/ease/db2/jdbc4.xml"/>
 
