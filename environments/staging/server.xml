@@ -47,7 +47,7 @@
         	<include location="${shared.resource.dir}/ease/db2/jdbc4.xml"/>
 
 <dataSource jndiName="jdbc/Messenger"  jdbcDriverRef="ease.db2jcc4">
-  <properties.db2.jcc serverName="ec2-52-87-90-56.compute-1.amazonaws.com"
+  <properties.db2.jcc serverName="ec2-3-231-5-201.amazonaws.com"
                       portNumber="60000"
                       databaseName="MSGRDB"
                       sslConnection="false"
@@ -55,6 +55,7 @@
                       password="${DB2_password}"/>
 </dataSource>
 
+	
 <!-- This allows certificate client to use basic authentication if certificate authentication does not succeed -->
 <!--	<webAppSecurity allowFailOverToBasicAuth="true" useAuthenticationDataForUnprotectedResource="false"/> -->
 	
