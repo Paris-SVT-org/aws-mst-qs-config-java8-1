@@ -41,7 +41,7 @@
 	</ldapRegistry> -->
 
 	<ldapRegistry host="ec2-3-231-5-201.compute-1.amazonaws.com" baseDN="o=ibm,c=us" port="9636"   bindDN="cn=persona1,ou=WebSphere,o=ibm,c=us"
-  bindPassword="ppersona1" ldapType="IBM Tivoli Directory Server" id="LDAP_tdirsrv" sslEnabled="true" name="o=ldap1" sslRef="LDAPSSLSettings">
+  bindPassword="${ldap.server.bindPassword}" ldapType="IBM Tivoli Directory Server" id="LDAP_tdirsrv" sslEnabled="true" name="o=ldap1" sslRef="LDAPSSLSettings">
 
 	</ldapRegistry>
 <!-- Replace DB server information below to connect to your own DB server -->
