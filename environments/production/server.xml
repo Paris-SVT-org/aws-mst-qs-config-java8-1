@@ -40,7 +40,7 @@
 	 </failoverServers>
 	</ldapRegistry> -->
 
-		<ldapRegistry host="ec2-52-87-90-56.compute-1.amazonaws.com" baseDN="o=ibm,c=us" port="9389" ldapType="IBM Tivoli Directory Server" id="LDAP_tdirsrv" sslEnabled="false" name="o=ldap1" sslRef="LDAPSSLSettings">
+		<ldapRegistry host="easej-svt-vm.purple-mystic-butterfly.com" baseDN="o=ibm,c=us" port="9389" ldapType="IBM Tivoli Directory Server" id="LDAP_tdirsrv" sslEnabled="false" name="o=ldap1" sslRef="LDAPSSLSettings">
 	
 	</ldapRegistry> 
 	
